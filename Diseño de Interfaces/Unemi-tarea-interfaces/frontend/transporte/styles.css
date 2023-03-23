@@ -1,0 +1,19 @@
+h1{
+    font-size: 40px;
+    background: linear-gradient(to right,red,blue,green,purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 500px;
+    
+}
+
+body{
+    background-image: url(img/vecteezy_transport-vehicle-and-logistics-concept-3d-render_8084549_639\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

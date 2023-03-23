@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tienda de Libros</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<h1 class="text-center my-3">Tienda de Libros</h1>
+		<div class="row">
+            
+			<div class="col-sm-6">
+				<h2>Abastecer Libros</h2>
+				<form>
+					<div class="form-group">
+						<label for="abastecer-isbn">ISBN:</label>
+						<input type="text" class="form-control" id="abastecer-isbn">
+					</div>
+					<div class="form-group">
+						<label for="abastecer-cantidad">Cantidad:</label>
+						<input type="number" class="form-control" id="abastecer-cantidad">
+					</div>
+					<button type="button" class="btn btn-primary" onclick="abastecerLibros()">Abastecer</button>
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<h2>Vender Libros</h2>
+				<form>
+					<div class="form-group">
+						<label for="vender-isbn">ISBN:</label>
+						<input type="text" class="form-control" id="vender-isbn">
+					</div>
+					<div class="form-group">
+						<label for="vender-cantidad">Cantidad:</label>
+						<input type="number" class="form-control" id="vender-cantidad">
+					</div>
+					<button type="button" class="btn btn-primary" onclick="venderLibros()">Vender</button>
+				</form>
+			</div>
+		</div>
+
+		<h2 class="mt-5">Catálogo de Libros</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ISBN</th>
+					<th>Título</th>
+					<th>Imagen</th>
+					<th>Precio de Compra</th>
+					<th>Precio de Venta</th>
+					<th>Cantidad Actual</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1234567890</td>
+					<td>La Sombra del Viento</td>
+					<td><img src="https://images-na.ssl-images-amazon.com/images/50x50" height="50"></td>
+					<td>$10.000</td>
+					<td>$15.000</td>
+					<td id="cantidad-1234567890">20</td>
+				</tr>
+				<tr>
+					<td>0987654321</td>
+					<td>Harry Potter y la Piedra Filosofal</td>
+                    <td><img src="https://via.placeholder.com/50x50" alt="El Quijote"></td>
+                    <td>$15.000</td>
+                    <td>$20.000</td>
+                    <td id="cantidad-1234567890">10</td>
+                </tr>
+            </tbody>    
+        </table>
+        <h2>Saldo en Caja</h2>
+        <p id="saldo">$1.000.000</p>
+    </div>    
+</body>
+</html>

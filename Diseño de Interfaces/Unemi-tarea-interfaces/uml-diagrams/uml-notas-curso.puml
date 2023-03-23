@@ -1,0 +1,21 @@
+@startuml notas
+
+class Curso {
+  - estudiantes: Estudiante[12]
+  + registrarNota(estudianteId:int, nota:float): void
+  + calcularPromedio(): float
+  + cantidadEstudiantesEncimaDelPromedio(): int
+}
+
+class Estudiante {
+  - id: int
+  - nota: float
+  + getId(): int
+  + getNota(): float
+  + setNota(nota:float): void
+}
+
+Curso -> Estudiante
+
+@enduml
+

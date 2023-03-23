@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Empresa de transporte</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Empresa de Transporte</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Información del Camión</h3>
+        <form>
+          <div class="form-group">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" class="form-control" id="matricula" placeholder="Escriba la matrícula del camión">
+          </div>
+          <div class="form-group">
+            <label for="capacidad">Capacidad de carga:</label>
+            <input type="number" class="form-control" id="capacidad" placeholder="Escriba la capacidad de carga del camión">
+          </div>
+          <div class="form-group">
+            <label for="consumo">Consumo de gasolina:</label>
+            <input type="number" class="form-control" id="consumo" placeholder="Escriba el consumo de gasolina del camión">
+          </div>
+          <div class="form-group">
+            <label for="cargaActual">Carga actual:</label>
+            <input type="number" class="form-control" id="cargaActual" placeholder="Escriba la carga actual del camión">
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar Camión</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h3>Carga y Descarga de Camiones</h3>
+        <form>
+          <div class="form-group">
+            <label for="camion">Seleccionar Camión:</label>
+            <select class="form-control" id="camion">
+              <option value="">--Seleccione un Camión--</option>
+              <option value="camion1">Camión 1</option>
+              <option value="camion2">Camión 2</option>
+              <option value="camion3">Camión 3</option>
+              <option value="camion4">Camión 4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="carga">Carga:</label>
+            <input type="number" class="form-control" id="carga" placeholder="Escriba la carga a cargar o descargar">
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="cargaDescarga" value="cargar">Cargar</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="cargaDescarga" value="descargar">Descargar</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Cargar/Descargar</button>
+        </form>
+    </div>
+  </div>  
+</body>
+</html>

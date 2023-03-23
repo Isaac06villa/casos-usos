@@ -1,0 +1,45 @@
+@startuml libros
+
+class Libro {
+  - isbn: int
+  - titulo: string
+  - precioCompra: float
+  - precioVenta: float
+  - cantidadActual: int
+  + getISBN(): int
+  + getTitulo(): string
+  + getPrecioCompra(): float
+  + getPrecioVenta(): float
+  + getCantidadActual(): int
+  + abastecer(cantidad: int): void
+  + vender(cantidad: int): void
+}
+
+class Transaccion {
+  - tipo: string
+  - fecha: string
+  - cantidad: int
+  + getTipo(): string
+  + getFecha(): string
+  + getCantidad(): int
+}
+
+class Tienda {
+  - catalogo: List<Libro>
+  - caja: float
+  + abastecerLibro(isbn: int, cantidad: int): void
+  + venderLibro(isbn: int, cantidad: int): void
+  + agregarLibro(libro: Libro): void
+  + eliminarLibro(isbn: int): void
+  + buscarPorTitulo(titulo: string): List<Libro>
+  + buscarPorISBN(isbn: int): Libro
+  + calcularCantidadAbastecimientos(isbn: int): int
+  + buscarLibroMasCostoso(): Libro
+  + buscarLibroMenosCostoso(): Libro
+  + buscarLibroMasVendido(): Libro
+}
+
+Libro "1" *-- "0..*" Transaccion
+Tienda "1" *-- "0..*" Libro
+
+@enduml

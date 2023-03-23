@@ -1,0 +1,44 @@
+@startuml transporte
+
+class Truck {
+    - plateNumber: string
+    - maxCapacity: float
+    - fuelConsumption: float
+    - currentLoad: float
+    + Truck(plateNumber: string, maxCapacity: float, fuelConsumption: float)
+    + getPlateNumber(): string
+    + getMaxCapacity(): float
+    + getFuelConsumption(): float
+    + getCurrentLoad(): float
+    + setCurrentLoad(load: float): void
+}
+
+class TransportCompany {
+    - trucks: List<Truck>
+    + TransportCompany()
+    + addTruck(truck: Truck): void
+    + removeTruck(truck: Truck): void
+    + getTrucks(): List<Truck>
+}
+
+class Cargo {
+    - description: string
+    - weight: float
+    + Cargo(description: string, weight: float)
+    + getDescription(): string
+    + getWeight(): float
+}
+
+class TransportManagementSystem {
+    - transportCompany: TransportCompany
+    + TransportManagementSystem()
+    + loadCargoOnTruck(cargo: Cargo, truck: Truck): boolean
+    + unloadCargoFromTruck(truck: Truck): boolean
+    + findBestTruckForCargocargo: Cargo): Truck
+}
+
+Truck *-right- TransportCompany
+TransportCompany *-down- TransportManagementSystem
+TransportManagementSystem ..> Cargo
+
+@enduml

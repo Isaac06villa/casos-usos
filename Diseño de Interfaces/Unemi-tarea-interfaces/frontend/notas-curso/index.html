@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Notas de Curso</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<h1>Registro de Notas</h1>
+		<br>
+		<form>
+			<div class="mb-3">
+				<label for="nombre">Estudiante:</label>
+                <input type="text" class="form-control" id="nombre" >
+				<br>
+				<label for="nota">Nota del estudiante:</label>
+				<input type="number" step="0.1" min="0" max="5" class="form-control" id="nota" name="nota">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="registrarNota()">Registrar</button>
+		</form>
+        <hr>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Estudiante</th>
+					<th>Nota del estudiante</th>
+				</tr>
+			</thead>
+			<tbody id="tabla">
+			</tbody>
+		</table>
+		<hr>
+		<div class="mb-3">
+			<label for="promedio">Promedio de notas:</label>
+			<input type="number" step="0.1" class="form-control" id="promedio" name="promedio" readonly>
+		</div>
+		<div class="mb-3">
+			<label for="arriba-promedio">Cantidad de estudiantes arriba del promedio:</label>
+			<input type="number" class="form-control" id="arriba-promedio" name="arriba-promedio" readonly>
+		</div>
+	</div>
+	<script>
+		let notas = [];
+		function registrarNota() {
+			let nota = parseFloat(document.getElementById("nota").value);
+			if (nota >= 0 && nota <= 5) {
+				notas.push(nota);
+				document.getElementById("nota").value = "";
+				calcularPromedio();
+				calcularArribaPromedio();
+			} else {
+				alert("La nota debe ser un valor entre 0 y 5");
+			}
+		}
+		function calcularPromedio() {
+			let promedio = 0;
+			for (let i = 0; i < notas.length; i++) {
+				promedio += notas[i];
+			}
+			promedio /= notas.length;
+			document.getElementById("promedio").value = promedio.toFixed(1);
+		}
+		function calcularArribaPromedio() {
+			let arribaPromedio = 0;
+			let promedio = parseFloat(document.getElementById("promedio").value);
+			for (let i = 0; i < notas.length; i++) {
+				if (notas[i] > promedio) {
+					arribaPromedio++;
+				}
+			}
+			document.getElementById("arriba-promedio").value = arribaPromedio;
+		}
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+body{
+    background-image: url("img/buenos-habitos-estudiantes-linea-01.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   
+}
+
+h1{
+    font-size: 40px;
+    background: linear-gradient(to right,red,blue,green,purple);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 500px;
+}
+
+thead{
+    color:blueviolet;
+}
